@@ -1,4 +1,5 @@
 var boundary_allowance_interval = 20;
+var statements_to_rate = 5;
 
 // create textarea
 $(document).ready(function() {
@@ -63,5 +64,8 @@ function track_slider(constrained, start_value) {
 //
 
 // TODO: dynamic slider id through function param
-// TODO: labels
+// TODO: labels DONE
 // TODO: boundary allowance DONE
+// TODO: conditions: full range = max allowance, partial range
+// TODO: selection of n statements from bank
+// TODO: db integration: json with: id, algrat, condition, judgment
