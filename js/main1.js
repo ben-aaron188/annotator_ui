@@ -1,30 +1,134 @@
-var boundary_allowance_interval = 20;
+var boundary_allowance_interval;
 var statements_to_rate = 5;
+var instructions;
+var constrained_meta;
+var condition = 2;
+
+
 
 // create textarea
 $(document).ready(function() {
+  init_data();
+  if (condition == 0) {
+    instructions = instructions_normal;
+    constrained_meta = false;
+  } else if (condition == 1) {
+    instructions = instructions_full;
+    constrained_meta = false;
+    boundary_allowance_interval = 100;
+  } else if (condition == 2) {
+    instructions = instructions_partial;
+    constrained_meta = true;
+    boundary_allowance_interval = 20;
+  }
   var div_screen_1 = "<div id='div_text_1'></div>";
+  var proceed_button = "<div id='proceed'>Next</div>";
   $('body').append(div_screen_1);
-  populate('div_text_1', files[0]);
-  add_slider('div_text_1', true, files[1]);
+  $('body').append(proceed_button);
+
+  populate('div_text_1', instructions[0], true);
+  $("#proceed").on('click', function() {
+    populate('div_text_1', instructions[1], true);
+    $("#proceed").on('click', function() {
+      populate('div_text_1', instructions[2], true);
+      $("#proceed").on('click', function() {
+        populate('div_text_1', instructions[3], true);
+        $("#proceed").on('click', function() {
+          populate('div_text_1', instructions[4], true);
+          $("#proceed").on('click', function() {
+            populate('div_text_1', instructions[5], true);
+            $("#proceed").on('click', function() {
+              populate('div_text_1', instructions[6], true);
+              $("#proceed").on('click', function() {
+                populate('div_text_1', instructions[7], true);
+                $("#proceed").on('click', function() {
+                  collect_data('check', 'check1', "na");
+                  populate('div_text_1', instructions[8], true);
+                  $("#proceed").on('click', function() {
+                    collect_data('check', 'check2', "na");
+                    populate('div_text_1', instructions[9], true);
+                    $("#proceed").on('click', function() {
+                      populate('div_text_1', instructions[10], false);
+                      add_slider('div_text_1', 'practice_slider_1', constrained_meta, files[0]);
+                      $("#proceed").on('click', function() {
+                        collect_data('slider', 'practice_slider_1', files[0]);
+                        populate('div_text_1', instructions[11], false);
+                        add_slider('div_text_1', 'practice_slider_2', constrained_meta, files[1]);
+                        $("#proceed").on('click', function() {
+                          collect_data('slider', 'practice_slider_2', files[1]);
+                          populate('div_text_1', instructions[12], true);
+                          $("#proceed").on('click', function() {
+                            populate('div_text_1', files[2], false);
+                            add_slider('div_text_1', 'slider_1', constrained_meta, files[2]);
+                            $("#proceed").on('click', function() {
+                              collect_data('slider', 'slider_1', files[2]);
+                              populate('div_text_1', files[3], false);
+                              add_slider('div_text_1', 'slider_2', constrained_meta, files[3]);
+                              $("#proceed").on('click', function() {
+                                collect_data('slider', 'slider_2', files[3]);
+                                populate('div_text_1', files[4], false);
+                                add_slider('div_text_1', 'slider_3', constrained_meta, files[4]);
+                                $("#proceed").on('click', function() {
+                                  collect_data('slider', 'slider_3', files[4]);
+                                  populate('div_text_1', files[5], false);
+                                  add_slider('div_text_1', 'slider_4', constrained_meta, files[5]);
+                                  $("#proceed").on('click', function() {
+                                    collect_data('slider', 'slider_4', files[5]);
+                                    populate('div_text_1', files[6], false);
+                                    add_slider('div_text_1', 'slider_5', constrained_meta, files[6]);
+                                    $("#proceed").on('click', function() {
+                                      collect_data('slider', 'slider_5', files[6]);
+                                      populate('div_text_1', instructions[13], true);
+                                      $("#proceed").on('click', function() {
+                                        collect_data('text', 'strategy_input', 'na');
+                                        populate('div_text_1', instructions[14], true);
+                                        $("#proceed").on('click', function() {
+                                          collect_data('text', 'prolific_input', 'na');
+                                          console.log('reached end of task');
+                                          // SEND FORM
+                                        });
+                                      });
+                                    });
+                                  });
+                                });
+                              });
+                            });
+                          });
+                        });
+                      });
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+  });
 });
 
-function populate(div_id, content_target) {
-  var populate_text = content_target.text;
-  var dyn_div_id = '#' + div_id;
-  $(dyn_div_id).text(populate_text);
+function populate(div_id, content_target, get_html) {
+  var populate_text;
+  var dyn_div_id;
+  if (get_html == true) {
+    populate_text = content_target.html;
+    dyn_div_id = '#' + div_id;
+    $(dyn_div_id).html(populate_text);
+  } else if (get_html == false) {
+    populate_text = content_target.text;
+    dyn_div_id = '#' + div_id;
+    $(dyn_div_id).text(populate_text);
+  }
 }
 
-
-//
-
-function add_slider(div_id, constrained, content_target) {
+function add_slider(div_id, slider_id, constrained, content_target) {
   var slider_val;
-  // var slider = "<div class='slider_wrapper' id='slider_wrapper_1'><input type='range' min='1' max='100' value='50' class='slider' id='slider_1' oninput='track_slider(true)'><output class='tracker_wrapper' id='slider_tracker_1'>Judgment: <span></span></output></div>";
-  var slider = "<div class='slider_wrapper' id='slider_wrapper_1'><input type='range' min='1' max='100' value='50' class='slider' id='slider_1'><div class='slider_output_labels'><span class='label_left'>TRUTH</span><span class='label_right'>LIE</span></div><output class='tracker_wrapper' id='slider_tracker_1'>Judgment: <span></span></output></div>";
+  var input = '#' + slider_id;
+  var input_tracker = '#tracker_' + slider_id;
   var dyn_div_id = '#' + div_id;
+  var slider = '<div class="slider_wrapper"><input type="range" min="1" max="100" value="50" class="slider" id=' + slider_id + '><div class="slider_output_labels"><span class="label_left">TRUTH</span><span class="label_right">LIE</span></div><output class="tracker_wrapper" id="tracker_' + slider_id + '">Judgment: <span></span></output></div>';
   $(dyn_div_id).append(slider);
-  var input = "#slider_1";
   if (constrained == true) {
     slider_val = content_target.algrat;
     var boundary_lower = (slider_val - boundary_allowance_interval / 2);
@@ -35,16 +139,16 @@ function add_slider(div_id, constrained, content_target) {
   } else if (constrained == false) {
     slider_val = 50;
   }
-  $("#slider_1").val(slider_val);
-  $("#slider_1").on('input', function() {
-    track_slider(constrained, slider_val);
+  $(input).val(slider_val);
+  $(input).on('input', function() {
+    track_slider(constrained, slider_val, input, input_tracker);
   });
-  $("#slider_tracker_1").children('span:first').text(slider_val);
+  $(input_tracker).children('span:first').text(slider_val);
 }
 
-function track_slider(constrained, start_value) {
-  var input = "#slider_1";
-  var output = "#slider_tracker_1";
+function track_slider(constrained, start_value, input_obj, tracker_obj) {
+  var input = input_obj;
+  var output = tracker_obj;
   var current_value = $(input).val();
   var boundary_lower = (start_value - boundary_allowance_interval / 2);
   var boundary_upper = (start_value + boundary_allowance_interval / 2);
@@ -61,11 +165,69 @@ function track_slider(constrained, start_value) {
   }
 }
 
+function init_data() {
+  collected_data = [];
+}
+
+function collect_data(data_type, target_id, content_target) {
+  var id_for_data_collection = '#' + target_id;
+  var data_value;
+  var data_package;
+  if (data_type == 'slider') {
+    participant_judgment = $(id_for_data_collection).val();
+    statement_text = content_target.text;
+    statement_id = content_target.id;
+    statement_algrat = content_target.algrat;
+    data_id = target_id;
+    data_value_type = data_type;
+
+    data_package = {
+      meta_participant_judgment: participant_judgment,
+      meta_statement_text: statement_text,
+      meta_statement_id: statement_id,
+      meta_statement_algrat: statement_algrat,
+      meta_data_id: data_id,
+      meta_data_value_type: data_value_type
+    };
+  } else if (data_type == 'check') {
+    var check_proxy_id = 'input[name=' + target_id + ']:checked';
+    data_value = $(check_proxy_id).val();
+    data_id = target_id;
+    data_value_type = data_type;
+
+    data_package = {
+      meta_participant_judgment: data_value,
+      meta_data_id: data_id,
+      meta_data_value_type: data_value_type
+    };
+
+  } else if (data_type == 'text') {
+    data_value = $(id_for_data_collection).val();
+    data_id = target_id;
+    data_value_type = data_type;
+
+    data_package = {
+      meta_participant_text: data_value,
+      meta_data_id: data_id,
+      meta_data_value_type: data_value_type
+    };
+  }
+
+  collected_data.push(data_package);
+  console.log('collected data package');
+
+}
+
 //
 
-// TODO: dynamic slider id through function param
+// TODO: dynamic slider id through function param DONE
 // TODO: labels DONE
 // TODO: boundary allowance DONE
-// TODO: conditions: full range = max allowance, partial range
+// TODO: conditions: full range = max allowance, partial range DONE
+
 // TODO: selection of n statements from bank
 // TODO: db integration: json with: id, algrat, condition, judgment
+// TODO: control handles on conditionals
+// TODO: add IC
+
+// BUG: collect data is run with every click
