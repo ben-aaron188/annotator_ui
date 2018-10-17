@@ -37,15 +37,15 @@ var instructions_normal = [{
 }, {
   id: 10,
   text: 'instruction8',
-  html: '<p>We start with two practice statements.</p>'
+  html: '<p>We start with two practice statements.</br></br>You will see that the button to proceed becomes inactive if your judgment is not within the allowed boundary.</p>'
 }, {
   id: 11,
-  text: 'Practice 1: Adjust the slider value to indicate a highly deceptive judgment.',
-  html: '<p></p>'
+  text: 'Practice 1',
+  html: '<p>Practice 1:</br></brAdjust the slider value to indicate a highly deceptive judgment.</br></br>The box with "Judgment" shows you the current slider value and adjusts itself according to your own judgment.</p>'
 }, {
   id: 12,
-  text: 'Practice 2: Adjust the slider value to indicate a highly truthful judgment.',
-  html: '<p></p>'
+  text: 'Practice 2',
+  html: '<p>Practice 2: Adjust the slider value to indicate a highly truthful judgment.</p>'
 }, {
   id: 13,
   text: 'start task',
@@ -65,6 +65,14 @@ var instructions_normal = [{
 }, {
   id: 17,
   text: 'This is not correct. The default judgment reflects the neutral midpoint. Please keep this in mind for a valid participation.',
+  html: '<p></p>'
+}, {
+  id: 18,
+  text: 'This is not quite correct. To indicate a highly deceptive statement, move the slider to the right slide of the range.',
+  html: '<p></p>'
+}, {
+  id: 19,
+  text: 'This is not quite correct. To indicate a highly truthful statement, move the slider to the left slide of the range.',
   html: '<p></p>'
 }];
 
@@ -110,12 +118,12 @@ var instructions_full = [{
   html: '<p>We start with two practice statements.</p>'
 }, {
   id: 11,
-  text: 'Practice 1: Adjust the slider value to indicate a highly deceptive judgment.',
-  html: '<p></p>'
+  text: 'Practice 1',
+  html: '<p>Practice 1:</br></brAdjust the slider value to indicate a highly deceptive judgment.</br></br>The box with "Judgment" shows you the current slider value and adjusts itself according to your own judgment.</p>'
 }, {
   id: 12,
-  text: 'Practice 2: Adjust the slider value to indicate a highly truthful judgment.',
-  html: '<p></p>'
+  text: 'Practice 2',
+  html: '<p>Practice 2:</br></brAdjust the slider value to indicate a highly truthful judgment.</p>'
 }, {
   id: 13,
   text: 'start task',
@@ -135,6 +143,14 @@ var instructions_full = [{
 }, {
   id: 17,
   text: 'This is not correct. The default judgment reflects the judgment of an artificial intelligence (AI) programme. Please keep this in mind for a valid participation.',
+  html: '<p></p>'
+}, {
+  id: 18,
+  text: 'This is not quite correct. To indicate a highly deceptive statement, move the slider to the right slide of the range.',
+  html: '<p></p>'
+}, {
+  id: 19,
+  text: 'This is not quite correct. To indicate a highly truthful statement, move the slider to the left slide of the range.',
   html: '<p></p>'
 }];
 
@@ -177,15 +193,15 @@ var instructions_partial = [{
 }, {
   id: 10,
   text: 'instruction8',
-  html: '<p>We start with two practice statements.</p>'
+  html: '<p>We start with two practice statements.</br></br>You will see that the button to proceed becomes inactive if your judgment is not within the allowed boundary.</p>'
 }, {
   id: 11,
-  text: 'Practice 1: Adjust the slider value within the allowed boundary towards a more deceptive judgment.',
-  html: '<p></p>'
+  text: 'Practice 1',
+  html: '<p>Practice 1:</br></br>Adjust the slider value within the allowed boundary towards a more deceptive judgment.</br></br>The box with "Judgment" shows you the current slider value and adjusts itself according to your own judgment.</p>'
 }, {
   id: 12,
-  text: 'Practice 2: Adjust the slider value within the allowed boundary towards a more truthful judgment.',
-  html: '<p></p>'
+  text: 'Practice 2',
+  html: '<p>Practice 2:</br></br>Adjust the slider value within the allowed boundary towards a more truthful judgment.</p>'
 }, {
   id: 13,
   text: 'start task',
@@ -205,5 +221,13 @@ var instructions_partial = [{
 }, {
   id: 17,
   text: 'This is not correct. The default judgment reflects the judgment of an artificial intelligence (AI) programme. Please keep this in mind for a valid participation.',
+  html: '<p></p>'
+}, {
+  id: 18,
+  text: 'This is not quite correct. To indicate a more deceptive statement, move the slider to the right slide of the allowed boundary range.',
+  html: '<p></p>'
+}, {
+  id: 19,
+  text: 'This is not quite correct. To indicate a more truthful statement, move the slider to the left slide of the allowed boundary range.',
   html: '<p></p>'
 }];
