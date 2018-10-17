@@ -3,8 +3,8 @@ var statements_to_rate = 5;
 var instructions;
 var constrained_meta;
 var condition = 2;
-
-
+var data_collection_listener = false;
+var i = 1;
 
 // create textarea
 $(document).ready(function() {
@@ -120,6 +120,7 @@ function populate(div_id, content_target, get_html) {
     dyn_div_id = '#' + div_id;
     $(dyn_div_id).text(populate_text);
   }
+  $('#proceed').unbind();
 }
 
 function add_slider(div_id, slider_id, constrained, content_target) {
@@ -166,7 +167,18 @@ function track_slider(constrained, start_value, input_obj, tracker_obj) {
 }
 
 function init_data() {
-  collected_data = [];
+  get_unid();
+  collected_data = {};
+  collected_data.unid = unid;
+  var browser_os = $.pgwBrowser();
+  collected_data.browsername = browser_os.browser.name;
+  collected_data.browserversion = browser_os.browser.majorVersion;
+  collected_data.osname = browser_os.os.name;
+  collected_data.osversion = browser_os.os.majorVersion;
+  collected_data.ts_time = moment().format('LTS');
+  collected_data.ts_date = moment().format('l');
+  collected_data.unid = unid;
+  collected_data.condition = condition;
 }
 
 function collect_data(data_type, target_id, content_target) {
@@ -189,6 +201,7 @@ function collect_data(data_type, target_id, content_target) {
       meta_data_id: data_id,
       meta_data_value_type: data_value_type
     };
+    collected_data.push(data_package);
   } else if (data_type == 'check') {
     var check_proxy_id = 'input[name=' + target_id + ']:checked';
     data_value = $(check_proxy_id).val();
@@ -200,7 +213,7 @@ function collect_data(data_type, target_id, content_target) {
       meta_data_id: data_id,
       meta_data_value_type: data_value_type
     };
-
+    collected_data.push(data_package);
   } else if (data_type == 'text') {
     data_value = $(id_for_data_collection).val();
     data_id = target_id;
@@ -211,12 +224,11 @@ function collect_data(data_type, target_id, content_target) {
       meta_data_id: data_id,
       meta_data_value_type: data_value_type
     };
+    collected_data.push(data_package);
   }
-
-  collected_data.push(data_package);
   console.log('collected data package');
-
 }
+
 
 //
 
@@ -228,6 +240,6 @@ function collect_data(data_type, target_id, content_target) {
 // TODO: selection of n statements from bank
 // TODO: db integration: json with: id, algrat, condition, judgment
 // TODO: control handles on conditionals
-// TODO: add IC
+// TODO: add IC DONE
 
-// BUG: collect data is run with every click
+// BUG: collect data is run with every click RESOLVED

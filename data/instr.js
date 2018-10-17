@@ -5,7 +5,7 @@ var instructions_normal = [{
 }, {
   id: 2,
   text: 'instruction2',
-  html: '<p>(IC identical to the one already approved)</p>'
+  html: '<center>Informed consent</center></br></br>By proceeding, you agree to participating after reading the information below.</br></br>Before you participate in this study, it is important that you know what the procedure of this study is. Please read the text below carefully and do not hesitate to ask for clarification if some parts are unclear to you. The experimenter is happy to answer any questions.</br></br>Aim of this research</br>This study aims to test whether we can differentiate truthful from deceptive statements about an upcoming event. To achieve this, we ask the participants to give a statement about the most important leisure activity for them in the upcoming week.</br></br>Procedure of this experiment</br>You will be instructed to either tell the truth about your most important activity or to lie about. We randomly allocated participants to these two groups. If you are instructed to lie, we will assign you an activity that you have to pretend to be doing. Be as convincing as possible in your answer. This experiment takes circa 5 minutes for which you receive GBP 0.60.</br></br>Voluntary basis</br>If you decide to refrain from taking part in this research, this will have no consequences to you whatsoever. If you decide to stop during the research, this is possible at any time without providing additional explanation, and without consequence. You will have the right to ask for withdrawal of your participation data up to 7 days after the study took place.</br></br>Insurance</br>As with all studies, the University of Amsterdam provides a basic liability insurance.</br></br>Privacy</br>Your data will be reviewed by the researchers listed below. In addition, your answers will be used for academic research purposes to determine how difficult it is to identify whether someone lied or told the truth. If this study may lead to a publication, the data will be published anonymously, and will thus be untraceable to individual participants. An anonymized dataset may be shared with other researchers for scientific purposes. Your privacy is guaranteed due to the fact that we will not share your personal information without personal confirmation.</br></br>If you have questions regarding this study, before or after, you may contact the responsible researcher; Dr B. Verschuere (phone: +31205256799, email: b.j.verschuere@uva.nl; University of Amsterdam, Roeterseilandcampus building G, room 1.31). If you have any formal complaints, please contact the member of the Faculty Ethics Committee (FMG) at the University of Amsterdam; Dr A. van Emmerik (phone: +20 525 8604; email: a.a.p.vanemmerik@uva.nl, Roeterseilandcampus building G, room 1.41).</br></br>Click on "next" to participate and confirm the above and below:<ul><li>I am 16 years of age or older</li><li>I have read and understood the information</li><li>I consent to participation in the study and the use of the gathered data</li><li>I retain the right to withdraw from the study at any time</li><li>I retain the right to withdraw my consent of using the gathered data</li></ul>'
 }, {
   id: 3,
   text: 'instruction3',
@@ -33,7 +33,7 @@ var instructions_normal = [{
 }, {
   id: 9,
   text: 'check2',
-  html: '<p>As a check: How as the slider starting point determined?</p><form action=""><input id="mcheck2" type="radio" name="check2" value="0">it was set to a neutral midpoint<br><input type="radio" name="check2" value="1">based on judgment of an artificial intelligence programme<br><input type="radio" name="check2" value="2">by chance in a random position</form>'
+  html: '<p>As a check: How was the slider starting point determined?</p><form action=""><input id="mcheck2" type="radio" name="check2" value="0">it was set to a neutral midpoint<br><input type="radio" name="check2" value="1">based on judgment of an artificial intelligence programme<br><input type="radio" name="check2" value="2">by chance in a random position</form>'
 }, {
   id: 10,
   text: 'instruction8',
@@ -67,7 +67,7 @@ var instructions_full = [{
 }, {
   id: 2,
   text: 'instruction2',
-  html: '<p>(IC identical to the one already approved)</p>'
+  html: '<center>Informed consent</center></br></br>By proceeding, you agree to participating after reading the information below.</br></br>Before you participate in this study, it is important that you know what the procedure of this study is. Please read the text below carefully and do not hesitate to ask for clarification if some parts are unclear to you. The experimenter is happy to answer any questions.</br></br>Aim of this research</br>This study aims to test whether we can differentiate truthful from deceptive statements about an upcoming event. To achieve this, we ask the participants to give a statement about the most important leisure activity for them in the upcoming week.</br></br>Procedure of this experiment</br>You will be instructed to either tell the truth about your most important activity or to lie about. We randomly allocated participants to these two groups. If you are instructed to lie, we will assign you an activity that you have to pretend to be doing. Be as convincing as possible in your answer. This experiment takes circa 5 minutes for which you receive GBP 0.60.</br></br>Voluntary basis</br>If you decide to refrain from taking part in this research, this will have no consequences to you whatsoever. If you decide to stop during the research, this is possible at any time without providing additional explanation, and without consequence. You will have the right to ask for withdrawal of your participation data up to 7 days after the study took place.</br></br>Insurance</br>As with all studies, the University of Amsterdam provides a basic liability insurance.</br></br>Privacy</br>Your data will be reviewed by the researchers listed below. In addition, your answers will be used for academic research purposes to determine how difficult it is to identify whether someone lied or told the truth. If this study may lead to a publication, the data will be published anonymously, and will thus be untraceable to individual participants. An anonymized dataset may be shared with other researchers for scientific purposes. Your privacy is guaranteed due to the fact that we will not share your personal information without personal confirmation.</br></br>If you have questions regarding this study, before or after, you may contact the responsible researcher; Dr B. Verschuere (phone: +31205256799, email: b.j.verschuere@uva.nl; University of Amsterdam, Roeterseilandcampus building G, room 1.31). If you have any formal complaints, please contact the member of the Faculty Ethics Committee (FMG) at the University of Amsterdam; Dr A. van Emmerik (phone: +20 525 8604; email: a.a.p.vanemmerik@uva.nl, Roeterseilandcampus building G, room 1.41).</br></br>Click on "next" to participate and confirm the above and below:<ul><li>I am 16 years of age or older</li><li>I have read and understood the information</li><li>I consent to participation in the study and the use of the gathered data</li><li>I retain the right to withdraw from the study at any time</li><li>I retain the right to withdraw my consent of using the gathered data</li></ul>'
 }, {
   id: 3,
   text: 'instruction3',
@@ -95,7 +95,7 @@ var instructions_full = [{
 }, {
   id: 9,
   text: 'check2',
-  html: '<p>As a check: How as the slider starting point determined?</p><form action=""><input id="mcheck2" type="radio" name="check2" value="0">it was set to a neutral midpoint<br><input type="radio" name="check2" value="1">based on judgment of an artificial intelligence programme<br><input type="radio" name="check2" value="2">by chance in a random position</form>'
+  html: '<p>As a check: How was the slider starting point determined?</p><form action=""><input id="mcheck2" type="radio" name="check2" value="0">it was set to a neutral midpoint<br><input type="radio" name="check2" value="1">based on judgment of an artificial intelligence programme<br><input type="radio" name="check2" value="2">by chance in a random position</form>'
 }, {
   id: 10,
   text: 'instruction8',
@@ -129,7 +129,7 @@ var instructions_partial = [{
 }, {
   id: 2,
   text: 'instruction2',
-  html: '<p>(IC identical to the one already approved)</p>'
+  html: '<center>Informed consent</center></br></br>By proceeding, you agree to participating after reading the information below.</br></br>Before you participate in this study, it is important that you know what the procedure of this study is. Please read the text below carefully and do not hesitate to ask for clarification if some parts are unclear to you. The experimenter is happy to answer any questions.</br></br>Aim of this research</br>This study aims to test whether we can differentiate truthful from deceptive statements about an upcoming event. To achieve this, we ask the participants to give a statement about the most important leisure activity for them in the upcoming week.</br></br>Procedure of this experiment</br>You will be instructed to either tell the truth about your most important activity or to lie about. We randomly allocated participants to these two groups. If you are instructed to lie, we will assign you an activity that you have to pretend to be doing. Be as convincing as possible in your answer. This experiment takes circa 5 minutes for which you receive GBP 0.60.</br></br>Voluntary basis</br>If you decide to refrain from taking part in this research, this will have no consequences to you whatsoever. If you decide to stop during the research, this is possible at any time without providing additional explanation, and without consequence. You will have the right to ask for withdrawal of your participation data up to 7 days after the study took place.</br></br>Insurance</br>As with all studies, the University of Amsterdam provides a basic liability insurance.</br></br>Privacy</br>Your data will be reviewed by the researchers listed below. In addition, your answers will be used for academic research purposes to determine how difficult it is to identify whether someone lied or told the truth. If this study may lead to a publication, the data will be published anonymously, and will thus be untraceable to individual participants. An anonymized dataset may be shared with other researchers for scientific purposes. Your privacy is guaranteed due to the fact that we will not share your personal information without personal confirmation.</br></br>If you have questions regarding this study, before or after, you may contact the responsible researcher; Dr B. Verschuere (phone: +31205256799, email: b.j.verschuere@uva.nl; University of Amsterdam, Roeterseilandcampus building G, room 1.31). If you have any formal complaints, please contact the member of the Faculty Ethics Committee (FMG) at the University of Amsterdam; Dr A. van Emmerik (phone: +20 525 8604; email: a.a.p.vanemmerik@uva.nl, Roeterseilandcampus building G, room 1.41).</br></br>Click on "next" to participate and confirm the above and below:<ul><li>I am 16 years of age or older</li><li>I have read and understood the information</li><li>I consent to participation in the study and the use of the gathered data</li><li>I retain the right to withdraw from the study at any time</li><li>I retain the right to withdraw my consent of using the gathered data</li></ul>'
 }, {
   id: 3,
   text: 'instruction3',
@@ -157,18 +157,18 @@ var instructions_partial = [{
 }, {
   id: 9,
   text: 'check2',
-  html: '<p>As a check: How as the slider starting point determined?</p><form action=""><input id="mcheck2" type="radio" name="check2" value="0">it was set to a neutral midpoint<br><input type="radio" name="check2" value="1">based on judgment of an artificial intelligence programme<br><input type="radio" name="check2" value="2">by chance in a random position</form>'
+  html: '<p>As a check: How was the slider starting point determined?</p><form action=""><input id="mcheck2" type="radio" name="check2" value="0">it was set to a neutral midpoint<br><input type="radio" name="check2" value="1">based on judgment of an artificial intelligence programme<br><input type="radio" name="check2" value="2">by chance in a random position</form>'
 }, {
   id: 10,
   text: 'instruction8',
   html: '<p>We start with two practice statements.</p>'
 }, {
   id: 11,
-  text: 'Practice 1: Adjust the slider value to indicate a highly deceptive judgment.',
+  text: 'Practice 1: Adjust the slider value within the allowed boundary towards a more deceptive judgment.',
   html: '<p></p>'
 }, {
   id: 12,
-  text: 'Practice 2: Adjust the slider value to indicate a highly truthful judgment.',
+  text: 'Practice 2: Adjust the slider value within the allowed boundary towards a more truthful judgment.',
   html: '<p></p>'
 }, {
   id: 13,
