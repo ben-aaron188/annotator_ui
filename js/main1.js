@@ -85,7 +85,7 @@ $(document).ready(function() {
                                         $("#proceed").on('click', function() {
                                           collect_data('text', 'prolific_input', 'na');
                                           console.log('reached end of task');
-                                          // SEND FORM
+                                          collect_php(JSON.stringify(collected_data));
                                         });
                                       });
                                     });
@@ -157,28 +157,44 @@ function track_slider(constrained, start_value, input_obj, tracker_obj) {
   if (constrained == true) {
     if (current_value > boundary_upper || current_value < boundary_lower) {
       console.log('stop');
-      if ($(output).children('span:first').addClass('input_allowed')) {
+      if ($(output).children('span:first').hasClass('input_allowed')) {
         $(output).children('span:first').removeClass('input_allowed').addClass('input_exceeded');
       }
-    } else if ($(output).children('span:first').addClass('input_exceeded')) {
+    } else if ($(output).children('span:first').hasClass('input_exceeded')) {
       $(output).children('span:first').removeClass('input_exceeded').addClass('input_allowed');
+    }
+  }
+}
+
+function trigger_button(how){
+  if(how == 'on'){
+    if ($("#proceed").hasClass('button_off')) {
+      $("#proceed").removeClass('button_off').addClass('button_on');
+    } else {
+      $("#proceed").addClass('button_on');
+    }
+  } else if (how == 'off'){
+    if ($("#proceed").hasClass('button_on')) {
+      $("#proceed").removeClass('button_on').addClass('button_off');
+    } else {
+      $("#proceed").addClass('button_off');
     }
   }
 }
 
 function init_data() {
   get_unid();
-  collected_data = {};
-  collected_data.unid = unid;
+  collected_data = [];
+  var meta_data_obj = {};
   var browser_os = $.pgwBrowser();
-  collected_data.browsername = browser_os.browser.name;
-  collected_data.browserversion = browser_os.browser.majorVersion;
-  collected_data.osname = browser_os.os.name;
-  collected_data.osversion = browser_os.os.majorVersion;
-  collected_data.ts_time = moment().format('LTS');
-  collected_data.ts_date = moment().format('l');
   collected_data.unid = unid;
-  collected_data.condition = condition;
+  meta_data_obj.browsername = browser_os.browser.name;
+  meta_data_obj.browserversion = browser_os.browser.majorVersion;
+  meta_data_obj.ts_time = moment().format('LTS');
+  meta_data_obj.ts_date = moment().format('l');
+  meta_data_obj.unid = unid;
+  meta_data_obj.condition = condition;
+  collected_data.push(meta_data_obj);
 }
 
 function collect_data(data_type, target_id, content_target) {
@@ -238,8 +254,10 @@ function collect_data(data_type, target_id, content_target) {
 // TODO: conditions: full range = max allowance, partial range DONE
 
 // TODO: selection of n statements from bank
-// TODO: db integration: json with: id, algrat, condition, judgment
+// TODO: db integration: json with: id, algrat, condition, judgment DONE
 // TODO: control handles on conditionals
 // TODO: add IC DONE
 
 // BUG: collect data is run with every click RESOLVED
+
+// TODO: set up DB on server

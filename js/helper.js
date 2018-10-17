@@ -22,18 +22,6 @@ function shuffle(array) {
   return newarr;
 }
 
-function send_to_server() {
-    try {
-      get_data();
-      $("#DATA").val(JSON.stringify(data));
-      $("#submit").click();
-    } catch (err) {
-      get_data_now();
-      $("#DATA").val(JSON.stringify(data));
-      $("#submit").click();
-    }
-}
-
 function get_unid() {
   unid = twoletters() + twoletters() + randomdigit(0, 9) + randomdigit(0, 9) + randomdigit(0, 9) + randomdigit(0, 9) + randomdigit(0, 9) + randomdigit(0, 9);
 }
