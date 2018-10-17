@@ -25,6 +25,7 @@ $(document).ready(function() {
   var proceed_button = "<div id='proceed'>Next</div>";
   $('body').append(div_screen_1);
   $('body').append(proceed_button);
+  
 
   populate('div_text_1', instructions[0], true);
   $("#proceed").on('click', function() {
