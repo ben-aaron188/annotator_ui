@@ -58,6 +58,14 @@ var instructions_normal = [{
   id: 15,
   text: 'prolificid',
   html: '<p>Thanks for participating.</br></br>Please confirm your participation with your Prolific participant ID:</br></br><input id="prolific_input" size="50"></input></br></br></br>You will now be redirected to Prolific.</p>'
+}, {
+  id: 16,
+  text: 'This is not correct. Your task is indicate how truthful or deceptive you think the statements are by moving the slider. Please keep this in mind for a valid participation.',
+  html: '<p></p>'
+}, {
+  id: 17,
+  text: 'This is not correct. The default judgment reflects the neutral midpoint. Please keep this in mind for a valid participation.',
+  html: '<p></p>'
 }];
 
 var instructions_full = [{
@@ -120,6 +128,14 @@ var instructions_full = [{
   id: 15,
   text: 'prolificid',
   html: '<p>Thanks for participating.</br></br>Please confirm your participation with your Prolific participant ID:</br></br><input id="prolific_input" size="50"></input></br></br></br>You will now be redirected to Prolific.</p>'
+}, {
+  id: 16,
+  text: 'This is not correct. Your task is to adjust the AI judgment using the full slider range. Please keep this in mind for a valid participation.',
+  html: '<p></p>'
+}, {
+  id: 17,
+  text: 'This is not correct. The default judgment reflects the judgment of an artificial intelligence (AI) programme. Please keep this in mind for a valid participation.',
+  html: '<p></p>'
 }];
 
 var instructions_partial = [{
@@ -182,4 +198,12 @@ var instructions_partial = [{
   id: 15,
   text: 'prolificid',
   html: '<p>Thanks for participating.</br></br>Please confirm your participation with your Prolific participant ID:</br></br><input id="prolific_input" size="50"></input></br></br></br>You will now be redirected to Prolific.</p>'
+}, {
+  id: 16,
+  text: 'This is not correct. Your task is to adjust the AI judgment up to 10 points to the left or right. Please keep this in mind for a valid participation.',
+  html: '<p></p>'
+}, {
+  id: 17,
+  text: 'This is not correct. The default judgment reflects the judgment of an artificial intelligence (AI) programme. Please keep this in mind for a valid participation.',
+  html: '<p></p>'
 }];

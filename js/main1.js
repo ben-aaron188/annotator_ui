@@ -25,7 +25,6 @@ $(document).ready(function() {
   var proceed_button = "<div id='proceed'>Next</div>";
   $('body').append(div_screen_1);
   $('body').append(proceed_button);
-  
 
   populate('div_text_1', instructions[0], true);
   $("#proceed").on('click', function() {
@@ -43,50 +42,54 @@ $(document).ready(function() {
               $("#proceed").on('click', function() {
                 populate('div_text_1', instructions[7], true);
                 $("#proceed").on('click', function() {
-                  collect_data('check', 'check1', "na");
-                  populate('div_text_1', instructions[8], true);
-                  $("#proceed").on('click', function() {
-                    collect_data('check', 'check2', "na");
-                    populate('div_text_1', instructions[9], true);
+                  if ($('input[name=check1]:checked').val() == condition) {
+                    collect_data('check', 'check1', "na");
+                    populate('div_text_1', instructions[8], true);
                     $("#proceed").on('click', function() {
-                      populate('div_text_1', instructions[10], false);
-                      add_slider('div_text_1', 'practice_slider_1', constrained_meta, files[0]);
-                      $("#proceed").on('click', function() {
-                        collect_data('slider', 'practice_slider_1', files[0]);
-                        populate('div_text_1', instructions[11], false);
-                        add_slider('div_text_1', 'practice_slider_2', constrained_meta, files[1]);
+                      if (($('input[name=check2]:checked').val() == 0 && condition == 0) || $('input[name=check2]:checked').val() == 1 && (condition == 1 || condition == 2)) {
+                        collect_data('check', 'check2', "na");
+                        populate('div_text_1', instructions[9], true);
                         $("#proceed").on('click', function() {
-                          collect_data('slider', 'practice_slider_2', files[1]);
-                          populate('div_text_1', instructions[12], true);
+                          populate('div_text_1', instructions[10], false);
+                          add_slider('div_text_1', 'practice_slider_1', constrained_meta, files[0]);
                           $("#proceed").on('click', function() {
-                            populate('div_text_1', files[2], false);
-                            add_slider('div_text_1', 'slider_1', constrained_meta, files[2]);
+                            collect_data('slider', 'practice_slider_1', files[0]);
+                            populate('div_text_1', instructions[11], false);
+                            add_slider('div_text_1', 'practice_slider_2', constrained_meta, files[1]);
                             $("#proceed").on('click', function() {
-                              collect_data('slider', 'slider_1', files[2]);
-                              populate('div_text_1', files[3], false);
-                              add_slider('div_text_1', 'slider_2', constrained_meta, files[3]);
+                              collect_data('slider', 'practice_slider_2', files[1]);
+                              populate('div_text_1', instructions[12], true);
                               $("#proceed").on('click', function() {
-                                collect_data('slider', 'slider_2', files[3]);
-                                populate('div_text_1', files[4], false);
-                                add_slider('div_text_1', 'slider_3', constrained_meta, files[4]);
+                                populate('div_text_1', files[2], false);
+                                add_slider('div_text_1', 'slider_1', constrained_meta, files[2]);
                                 $("#proceed").on('click', function() {
-                                  collect_data('slider', 'slider_3', files[4]);
-                                  populate('div_text_1', files[5], false);
-                                  add_slider('div_text_1', 'slider_4', constrained_meta, files[5]);
+                                  collect_data('slider', 'slider_1', files[2]);
+                                  populate('div_text_1', files[3], false);
+                                  add_slider('div_text_1', 'slider_2', constrained_meta, files[3]);
                                   $("#proceed").on('click', function() {
-                                    collect_data('slider', 'slider_4', files[5]);
-                                    populate('div_text_1', files[6], false);
-                                    add_slider('div_text_1', 'slider_5', constrained_meta, files[6]);
+                                    collect_data('slider', 'slider_2', files[3]);
+                                    populate('div_text_1', files[4], false);
+                                    add_slider('div_text_1', 'slider_3', constrained_meta, files[4]);
                                     $("#proceed").on('click', function() {
-                                      collect_data('slider', 'slider_5', files[6]);
-                                      populate('div_text_1', instructions[13], true);
+                                      collect_data('slider', 'slider_3', files[4]);
+                                      populate('div_text_1', files[5], false);
+                                      add_slider('div_text_1', 'slider_4', constrained_meta, files[5]);
                                       $("#proceed").on('click', function() {
-                                        collect_data('text', 'strategy_input', 'na');
-                                        populate('div_text_1', instructions[14], true);
+                                        collect_data('slider', 'slider_4', files[5]);
+                                        populate('div_text_1', files[6], false);
+                                        add_slider('div_text_1', 'slider_5', constrained_meta, files[6]);
                                         $("#proceed").on('click', function() {
-                                          collect_data('text', 'prolific_input', 'na');
-                                          console.log('reached end of task');
-                                          collect_php(JSON.stringify(collected_data));
+                                          collect_data('slider', 'slider_5', files[6]);
+                                          populate('div_text_1', instructions[13], true);
+                                          $("#proceed").on('click', function() {
+                                            collect_data('text', 'strategy_input', 'na');
+                                            populate('div_text_1', instructions[14], true);
+                                            $("#proceed").on('click', function() {
+                                              collect_data('text', 'prolific_input', 'na');
+                                              console.log('reached end of task');
+                                              collect_php(JSON.stringify(collected_data));
+                                            });
+                                          });
                                         });
                                       });
                                     });
@@ -96,9 +99,13 @@ $(document).ready(function() {
                             });
                           });
                         });
-                      });
+                      } else {
+                        alert(instructions[16].text);
+                      }
                     });
-                  });
+                  } else {
+                    alert(instructions[15].text);
+                  }
                 });
               });
             });
@@ -158,23 +165,31 @@ function track_slider(constrained, start_value, input_obj, tracker_obj) {
   if (constrained == true) {
     if (current_value > boundary_upper || current_value < boundary_lower) {
       console.log('stop');
-      if ($(output).children('span:first').hasClass('input_allowed')) {
+      if ($(output).children('span:first').addClass('input_allowed')) {
         $(output).children('span:first').removeClass('input_allowed').addClass('input_exceeded');
+        trigger_button('off');
       }
-    } else if ($(output).children('span:first').hasClass('input_exceeded')) {
+    } else if ($(output).children('span:first').addClass('input_exceeded')) {
       $(output).children('span:first').removeClass('input_exceeded').addClass('input_allowed');
+      trigger_button('on');
+    }
+  } else if (constrained == false) {
+    if (current_value == start_value) {
+      trigger_button('off');
+    } else if (current_value != start_value) {
+      trigger_button('on');
     }
   }
 }
 
-function trigger_button(how){
-  if(how == 'on'){
+function trigger_button(how) {
+  if (how == 'on') {
     if ($("#proceed").hasClass('button_off')) {
       $("#proceed").removeClass('button_off').addClass('button_on');
     } else {
       $("#proceed").addClass('button_on');
     }
-  } else if (how == 'off'){
+  } else if (how == 'off') {
     if ($("#proceed").hasClass('button_on')) {
       $("#proceed").removeClass('button_on').addClass('button_off');
     } else {
@@ -243,7 +258,7 @@ function collect_data(data_type, target_id, content_target) {
     };
     collected_data.push(data_package);
   }
-  console.log('collected data package');
+  return collected_data;
 }
 
 
