@@ -30,8 +30,8 @@ $(document).ready(function() {
   populate('div_text_1', instructions[0], true);
   $("#proceed").on('click', function() {
     populate('div_text_1', instructions[1], true);
-    $("#proceed").on('click', function() {
-      populate('div_text_1', instructions[2], true);
+    // $("#proceed").on('click', function() {
+      // populate('div_text_1', instructions[2], true);
       $("#proceed").on('click', function() {
         populate('div_text_1', instructions[3], true);
         $("#proceed").on('click', function() {
@@ -121,7 +121,7 @@ $(document).ready(function() {
           });
         });
       });
-    });
+    // });
   });
 });
 
