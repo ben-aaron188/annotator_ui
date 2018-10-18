@@ -4,7 +4,6 @@ var instructions;
 var constrained_meta;
 var condition = 2;
 var data_collection_listener = false;
-var i = 1;
 
 // create textarea
 $(document).ready(function() {
@@ -22,8 +21,10 @@ $(document).ready(function() {
     boundary_allowance_interval = 20;
   }
   var div_screen_1 = "<div id='div_text_1'></div>";
+  var slider_placeholder_div = "<div id='div_placeholder'></div>";
   var proceed_button = "<div id='proceed'>Next</div>";
   $('body').append(div_screen_1);
+  $('body').append(slider_placeholder_div);
   $('body').append(proceed_button);
 
   populate('div_text_1', instructions[0], true);
@@ -136,6 +137,7 @@ function populate(div_id, content_target, get_html) {
     dyn_div_id = '#' + div_id;
     $(dyn_div_id).text(populate_text);
   }
+  $("#div_placeholder").empty();
   $('#proceed').unbind();
 }
 
@@ -143,9 +145,10 @@ function add_slider(div_id, slider_id, constrained, content_target) {
   var slider_val;
   var input = '#' + slider_id;
   var input_tracker = '#tracker_' + slider_id;
-  var dyn_div_id = '#' + div_id;
+  // var dyn_div_id = '#' + div_id;
+  var dyn_div_id = '#div_placeholder';
   var slider = '<div class="slider_wrapper"><input type="range" min="1" max="100" value="50" class="slider" id=' + slider_id + '><div class="slider_output_labels"><span class="label_left">TRUTH</span><span class="label_right">LIE</span></div><output class="tracker_wrapper" id="tracker_' + slider_id + '">Judgment: <span></span></output></div>';
-  $(dyn_div_id).append(slider);
+  $(dyn_div_id).html(slider);
   if (constrained == true) {
     slider_val = content_target.algrat;
     var boundary_lower = (slider_val - boundary_allowance_interval / 2);
@@ -161,6 +164,7 @@ function add_slider(div_id, slider_id, constrained, content_target) {
     track_slider(constrained, slider_val, input, input_tracker);
   });
   $(input_tracker).children('span:first').text(slider_val);
+  trigger_button('off');
 }
 
 function track_slider(constrained, start_value, input_obj, tracker_obj) {
@@ -266,7 +270,7 @@ function collect_data(data_type, target_id, content_target) {
     };
     collected_data.push(data_package);
   }
-  return collected_data;
+  // return collected_data;
 }
 
 
@@ -285,4 +289,6 @@ function collect_data(data_type, target_id, content_target) {
 // BUG: collect data is run with every click RESOLVED
 
 // TODO: set up DB on server
-// TODO: conditional on practice statements
+// TODO: conditional on practice statements DONE
+// TODO: layout fix of slider in Chrome DONE
+// TODO: layout of slider if statement is html DONE
