@@ -2,7 +2,7 @@ function collect_php(var_data) {
   console.log('triggered php server call');
   $.ajax({
     type: "POST",
-    url: "../php/collect.php",
+    url: "../../php/collect.php",
     data: {
       data_pre: var_data
     },
