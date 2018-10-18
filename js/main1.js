@@ -288,7 +288,9 @@ function collect_data(data_type, target_id, content_target) {
 
 // BUG: collect data is run with every click RESOLVED
 
-// TODO: set up DB on server
+// TODO: set up DB on server DONE
 // TODO: conditional on practice statements DONE
 // TODO: layout fix of slider in Chrome DONE
 // TODO: layout of slider if statement is html DONE
+
+// TODO: statements/server integration: set condition-id-subj pair in DB, all ids rep 3 times per condition and 5 statements per subj
