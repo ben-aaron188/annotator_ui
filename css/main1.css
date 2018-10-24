@@ -9,14 +9,14 @@ html{
   overflow: scroll;
   top: 30%;
   left: 50%;
-  width: 45%;
-  height: 40%;
+  width: 60%;
+  height: 45%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
   padding-left: 1%;
   padding-right: 1%;
   padding-top: 1%;
-  font-size: 1.25vw;
+  font-size: 1.35vw;
   border: solid 0.5vw Black;
   z-index: 2;
 }

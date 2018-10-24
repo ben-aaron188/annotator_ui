@@ -4,6 +4,9 @@ var instructions;
 var constrained_meta;
 var condition = 2;
 var data_collection_listener = false;
+var mancheck1_counter = 0;
+var mancheck2_counter = 0;
+
 
 // create textarea
 $(document).ready(function() {
@@ -31,67 +34,71 @@ $(document).ready(function() {
   $("#proceed").on('click', function() {
     populate('div_text_1', instructions[1], true);
     // $("#proceed").on('click', function() {
-      // populate('div_text_1', instructions[2], true);
+    // populate('div_text_1', instructions[2], true);
+    $("#proceed").on('click', function() {
+      populate('div_text_1', instructions[3], true);
       $("#proceed").on('click', function() {
-        populate('div_text_1', instructions[3], true);
+        populate('div_text_1', instructions[4], true);
         $("#proceed").on('click', function() {
-          populate('div_text_1', instructions[4], true);
+          populate('div_text_1', instructions[5], true);
           $("#proceed").on('click', function() {
-            populate('div_text_1', instructions[5], true);
+            populate('div_text_1', instructions[6], true);
             $("#proceed").on('click', function() {
-              populate('div_text_1', instructions[6], true);
+              populate('div_text_1', instructions[7], true);
               $("#proceed").on('click', function() {
-                populate('div_text_1', instructions[7], true);
-                $("#proceed").on('click', function() {
-                  if ($('input[name=check1]:checked').val() == condition) {
-                    collect_data('check', 'check1', "na");
-                    populate('div_text_1', instructions[8], true);
-                    $("#proceed").on('click', function() {
-                      if (($('input[name=check2]:checked').val() == 0 && condition == 0) || $('input[name=check2]:checked').val() == 1 && (condition == 1 || condition == 2)) {
-                        collect_data('check', 'check2', "na");
-                        populate('div_text_1', instructions[9], true);
+                if ($('input[name=check1]:checked').val() == condition) {
+                  collect_data('check', 'check1', "na");
+                  populate('div_text_1', instructions[8], true);
+                  $("#proceed").on('click', function() {
+                    if (($('input[name=check2]:checked').val() == 0 && condition == 0) || $('input[name=check2]:checked').val() == 1 && (condition == 1 || condition == 2)) {
+                      collect_data('check', 'check2', "na");
+                      populate('div_text_1', instructions[9], true);
+                      $("#proceed").on('click', function() {
+                        populate('div_text_1', instructions[10], true);
+                        add_slider('div_text_1', 'practice_slider_1', constrained_meta, files[0]);
                         $("#proceed").on('click', function() {
-                          populate('div_text_1', instructions[10], true);
-                          add_slider('div_text_1', 'practice_slider_1', constrained_meta, files[0]);
-                          $("#proceed").on('click', function() {
-                            if (($("#practice_slider_1").val() >= 80 && condition != 2) || $("#practice_slider_1").val() >= 60 && condition == 2) {
-                              collect_data('slider', 'practice_slider_1', files[0]);
-                              populate('div_text_1', instructions[11], true);
-                              add_slider('div_text_1', 'practice_slider_2', constrained_meta, files[1]);
-                              $("#proceed").on('click', function() {
-                                if (($("#practice_slider_2").val() <= 20 && condition != 2) || $("#practice_slider_2").val() <= 65 && condition == 2) {
-                                  collect_data('slider', 'practice_slider_2', files[1]);
-                                  populate('div_text_1', instructions[12], true);
+                          if (($("#practice_slider_1").val() >= 80 && condition != 2) || $("#practice_slider_1").val() >= 60 && condition == 2) {
+                            collect_data('slider', 'practice_slider_1', files[0]);
+                            populate('div_text_1', instructions[11], true);
+                            add_slider('div_text_1', 'practice_slider_2', constrained_meta, files[1]);
+                            $("#proceed").on('click', function() {
+                              if (($("#practice_slider_2").val() <= 20 && condition != 2) || $("#practice_slider_2").val() <= 65 && condition == 2) {
+                                collect_data('slider', 'practice_slider_2', files[1]);
+                                populate('div_text_1', instructions[12], true);
+                                $("#proceed").on('click', function() {
+                                  populate('div_text_1', files[2], false);
+                                  add_slider('div_text_1', 'slider_1', constrained_meta, files[2]);
                                   $("#proceed").on('click', function() {
-                                    populate('div_text_1', files[2], false);
-                                    add_slider('div_text_1', 'slider_1', constrained_meta, files[2]);
+                                    collect_data('slider', 'slider_1', files[2]);
+                                    populate('div_text_1', files[3], false);
+                                    add_slider('div_text_1', 'slider_2', constrained_meta, files[3]);
                                     $("#proceed").on('click', function() {
-                                      collect_data('slider', 'slider_1', files[2]);
-                                      populate('div_text_1', files[3], false);
-                                      add_slider('div_text_1', 'slider_2', constrained_meta, files[3]);
+                                      collect_data('slider', 'slider_2', files[3]);
+                                      populate('div_text_1', files[4], false);
+                                      add_slider('div_text_1', 'slider_3', constrained_meta, files[4]);
                                       $("#proceed").on('click', function() {
-                                        collect_data('slider', 'slider_2', files[3]);
-                                        populate('div_text_1', files[4], false);
-                                        add_slider('div_text_1', 'slider_3', constrained_meta, files[4]);
+                                        collect_data('slider', 'slider_3', files[4]);
+                                        populate('div_text_1', files[5], false);
+                                        add_slider('div_text_1', 'slider_4', constrained_meta, files[5]);
                                         $("#proceed").on('click', function() {
-                                          collect_data('slider', 'slider_3', files[4]);
-                                          populate('div_text_1', files[5], false);
-                                          add_slider('div_text_1', 'slider_4', constrained_meta, files[5]);
+                                          collect_data('slider', 'slider_4', files[5]);
+                                          populate('div_text_1', files[6], false);
+                                          add_slider('div_text_1', 'slider_5', constrained_meta, files[6]);
                                           $("#proceed").on('click', function() {
-                                            collect_data('slider', 'slider_4', files[5]);
-                                            populate('div_text_1', files[6], false);
-                                            add_slider('div_text_1', 'slider_5', constrained_meta, files[6]);
+                                            collect_data('slider', 'slider_5', files[6]);
+                                            populate('div_text_1', instructions[13], true);
                                             $("#proceed").on('click', function() {
-                                              collect_data('slider', 'slider_5', files[6]);
-                                              populate('div_text_1', instructions[13], true);
+                                              collect_data('text', 'strategy_input', 'na');
+                                              populate('div_text_1', instructions[14], true);
                                               $("#proceed").on('click', function() {
-                                                collect_data('text', 'strategy_input', 'na');
-                                                populate('div_text_1', instructions[14], true);
-                                                $("#proceed").on('click', function() {
-                                                  collect_data('text', 'prolific_input', 'na');
-                                                  console.log('reached end of task');
-                                                  collect_php(JSON.stringify(collected_data));
-                                                });
+                                                collect_data('text', 'prolific_input', 'na');
+                                                var meta_mancheck_counters = {
+                                                  manchek1: mancheck1_counter,
+                                                  manchek2: mancheck2_counter
+                                                };
+                                                collected_data.push(meta_mancheck_counters);
+                                                console.log('reached end of task');
+                                                collect_php(JSON.stringify(collected_data));
                                               });
                                             });
                                           });
@@ -99,28 +106,31 @@ $(document).ready(function() {
                                       });
                                     });
                                   });
-                                } else {
-                                  alert(instructions[18].text);
-                                }
-                              });
-                            } else {
-                              alert(instructions[17].text);
-                            }
-                          });
+                                });
+                              } else {
+                                alert(instructions[18].text);
+                              }
+                            });
+                          } else {
+                            alert(instructions[17].text);
+                          }
                         });
-                      } else {
-                        alert(instructions[16].text);
-                      }
-                    });
-                  } else {
-                    alert(instructions[15].text);
-                  }
-                });
+                      });
+                    } else {
+                      alert(instructions[16].text);
+                      mancheck2_counter += 1;
+                    }
+                  });
+                } else {
+                  alert(instructions[15].text);
+                  mancheck1_counter += 1;
+                }
               });
             });
           });
         });
       });
+    });
     // });
   });
 });
