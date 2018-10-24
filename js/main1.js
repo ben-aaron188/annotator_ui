@@ -10,7 +10,7 @@ var mancheck2_counter = 0;
 
 
 function set_statements_condition(ajax_retrieved_obj) {
-  participant_id = ajax_retrieved_obj.cond_cond;
+  participant_id = parseInt(ajax_retrieved_obj.cond_cond);
   practice_statements = get_sub_by_participant_id(-1);
   files = get_sub_by_participant_id(participant_id);
   condition = files[0].cond;
