@@ -105,26 +105,26 @@ $(document).ready(function() {
                                 collect_data('slider', 'practice_slider_2', files[1]);
                                 populate('div_text_1', instructions[12], true);
                                 $("#proceed").on('click', function() {
-                                  populate('div_text_1', files[2], false);
-                                  add_slider('div_text_1', 'slider_1', constrained_meta, files[2]);
+                                  populate('div_text_1', files[0], false);
+                                  add_slider('div_text_1', 'slider_1', constrained_meta, files[0]);
                                   $("#proceed").on('click', function() {
-                                    collect_data('slider', 'slider_1', files[2]);
-                                    populate('div_text_1', files[3], false);
-                                    add_slider('div_text_1', 'slider_2', constrained_meta, files[3]);
+                                    collect_data('slider', 'slider_1', files[0]);
+                                    populate('div_text_1', files[1], false);
+                                    add_slider('div_text_1', 'slider_2', constrained_meta, files[1]);
                                     $("#proceed").on('click', function() {
-                                      collect_data('slider', 'slider_2', files[3]);
-                                      populate('div_text_1', files[4], false);
-                                      add_slider('div_text_1', 'slider_3', constrained_meta, files[4]);
+                                      collect_data('slider', 'slider_2', files[1]);
+                                      populate('div_text_1', files[2], false);
+                                      add_slider('div_text_1', 'slider_3', constrained_meta, files[2]);
                                       $("#proceed").on('click', function() {
-                                        collect_data('slider', 'slider_3', files[4]);
-                                        populate('div_text_1', files[5], false);
-                                        add_slider('div_text_1', 'slider_4', constrained_meta, files[5]);
+                                        collect_data('slider', 'slider_3', files[2]);
+                                        populate('div_text_1', files[3], false);
+                                        add_slider('div_text_1', 'slider_4', constrained_meta, files[3]);
                                         $("#proceed").on('click', function() {
-                                          collect_data('slider', 'slider_4', files[5]);
-                                          populate('div_text_1', files[6], false);
-                                          add_slider('div_text_1', 'slider_5', constrained_meta, files[6]);
+                                          collect_data('slider', 'slider_4', files[3]);
+                                          populate('div_text_1', files[4], false);
+                                          add_slider('div_text_1', 'slider_5', constrained_meta, files[4]);
                                           $("#proceed").on('click', function() {
-                                            collect_data('slider', 'slider_5', files[6]);
+                                            collect_data('slider', 'slider_5', files[4]);
                                             populate('div_text_1', instructions[13], true);
                                             $("#proceed").on('click', function() {
                                               collect_data('text', 'strategy_input', 'na');
@@ -350,3 +350,4 @@ function collect_data(data_type, target_id, content_target) {
 // TODO: update IC after approval
 // TODO: improve loading of file in the background
 // TODO: more info for statements (context)
+// BUG: content target for practice statements does not work
