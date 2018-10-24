@@ -59,7 +59,7 @@ var instructions_normal = [{
 }, {
   id: 11,
   text: 'Practice 1',
-  html: '<p>Practice 1:</br></brAdjust the slider value to indicate a highly deceptive judgment.</br></br>The box with "Judgment" shows you the current slider value and adjusts itself according to your own judgment.</p>'
+  html: '<p>Practice 1:</br></br>Adjust the slider value to indicate a highly deceptive judgment.</br></br>The box with "Judgment" shows you the current slider value and adjusts itself according to your own judgment.</p>'
 }, {
   id: 12,
   text: 'Practice 2',
@@ -137,7 +137,7 @@ var instructions_full = [{
 }, {
   id: 11,
   text: 'Practice 1',
-  html: '<p>Practice 1:</br></brAdjust the slider value to indicate a highly deceptive judgment.</br></br>The box with "Judgment" shows you the current slider value and adjusts itself according to your own judgment.</p>'
+  html: '<p>Practice 1:</br></br>Adjust the slider value to indicate a highly deceptive judgment.</br></br>The box with "Judgment" shows you the current slider value and adjusts itself according to your own judgment.</p>'
 }, {
   id: 12,
   text: 'Practice 2',

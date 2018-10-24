@@ -2,7 +2,7 @@ var boundary_allowance_interval;
 var statements_to_rate = 5;
 var instructions;
 var constrained_meta;
-var condition = 2;
+// var condition = 2;
 var data_collection_listener = false;
 var mancheck1_counter = 0;
 var mancheck2_counter = 0;
