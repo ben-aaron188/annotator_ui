@@ -32,20 +32,20 @@ $(document).ready(function() {
   get_condition_from_db(display_condition_details);
   // condition_meta = {cond_cond: 2};
   // condition = condition_meta.cond_cond;
-  set_statements_condition(condition_meta);
-  init_data();
-  if (condition == 0) {
-    instructions = instructions_normal;
-    constrained_meta = false;
-  } else if (condition == 1) {
-    instructions = instructions_full;
-    constrained_meta = false;
-    boundary_allowance_interval = 100;
-  } else if (condition == 2) {
-    instructions = instructions_partial;
-    constrained_meta = true;
-    boundary_allowance_interval = 20;
-  }
+  // set_statements_condition(condition_meta);
+  // init_data();
+  // if (condition == 0) {
+  //   instructions = instructions_normal;
+  //   constrained_meta = false;
+  // } else if (condition == 1) {
+  //   instructions = instructions_full;
+  //   constrained_meta = false;
+  //   boundary_allowance_interval = 100;
+  // } else if (condition == 2) {
+  //   instructions = instructions_partial;
+  //   constrained_meta = true;
+  //   boundary_allowance_interval = 20;
+  // }
   var div_screen_1 = "<div id='div_text_1'></div>";
   var slider_placeholder_div = "<div id='div_placeholder'></div>";
   var proceed_button = "<div id='proceed'>Next</div>";
@@ -59,6 +59,22 @@ $(document).ready(function() {
     // $("#proceed").on('click', function() {
     // populate('div_text_1', instructions[2], true);
     $("#proceed").on('click', function() {
+
+      set_statements_condition(condition_meta);
+      init_data();
+      if (condition == 0) {
+        instructions = instructions_normal;
+        constrained_meta = false;
+      } else if (condition == 1) {
+        instructions = instructions_full;
+        constrained_meta = false;
+        boundary_allowance_interval = 100;
+      } else if (condition == 2) {
+        instructions = instructions_partial;
+        constrained_meta = true;
+        boundary_allowance_interval = 20;
+      }
+
       populate('div_text_1', instructions[3], true);
       $("#proceed").on('click', function() {
         populate('div_text_1', instructions[4], true);
