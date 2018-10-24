@@ -53,9 +53,9 @@ $(document).ready(function() {
   $('body').append(slider_placeholder_div);
   $('body').append(proceed_button);
 
-  populate('div_text_1', instructions[0], true);
+  populate('div_text_1', instructions_base[0], true);
   $("#proceed").on('click', function() {
-    populate('div_text_1', instructions[1], true);
+    populate('div_text_1', instructions_base[1], true);
     // $("#proceed").on('click', function() {
     // populate('div_text_1', instructions[2], true);
     $("#proceed").on('click', function() {
@@ -75,7 +75,7 @@ $(document).ready(function() {
         boundary_allowance_interval = 20;
       }
 
-      populate('div_text_1', instructions[3], true);
+      populate('div_text_1', instructions_base[3], true);
       $("#proceed").on('click', function() {
         populate('div_text_1', instructions[4], true);
         $("#proceed").on('click', function() {
