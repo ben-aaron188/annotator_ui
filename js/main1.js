@@ -135,7 +135,9 @@ $(document).ready(function() {
                                                   manchek1: mancheck1_counter,
                                                   manchek2: mancheck2_counter
                                                 };
+                                                var p_id = condition_meta.cond_cond;
                                                 collected_data.push(meta_mancheck_counters);
+                                                collected_data.push(p_id);
                                                 console.log('reached end of task');
                                                 collect_php(JSON.stringify(collected_data));
                                               });

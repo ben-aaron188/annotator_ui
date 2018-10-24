@@ -47,7 +47,7 @@ function init_conditions_in_db(condition, status_update) {
 // last batch
 // var participant_ids = [];
 //
-// for (var i = 1; i < 600; i++) {
+// for (var i = 1; i < 2; i++) {
 //   participant_ids[i] = i;
 // }
 //
