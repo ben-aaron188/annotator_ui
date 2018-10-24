@@ -9,10 +9,11 @@ var mancheck2_counter = 0;
 
 
 
-function set_statements(ajax_retrieved_obj) {
+function set_statements_condition(ajax_retrieved_obj) {
   participant_id = ajax_retrieved_obj.cond_cond;
   practice_statements = get_sub_by_participant_id(-1);
   files = get_sub_by_participant_id(participant_id);
+  condition = files[0].cond;
 }
 
 // get object based on participant_id identifier
@@ -28,9 +29,10 @@ function get_sub_by_participant_id(participant_getter_id){
 
 // create textarea
 $(document).ready(function() {
-  // get_condition_from_db(display_condition_details);
-  condition_meta = {cond_cond: 2};
-  condition = condition_meta.cond_cond;
+  get_condition_from_db(display_condition_details);
+  // condition_meta = {cond_cond: 2};
+  // condition = condition_meta.cond_cond;
+  set_statements_condition(condition_meta);
   init_data();
   if (condition == 0) {
     instructions = instructions_normal;
