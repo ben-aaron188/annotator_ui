@@ -11,7 +11,7 @@ var mancheck2_counter = 0;
 
 function set_statements_condition(ajax_retrieved_obj) {
   participant_id = parseInt(ajax_retrieved_obj.cond_cond);
-  practice_statements = get_sub_by_participant_id(-1);
+  // practice_statements = get_sub_by_participant_id(-1);
   files = get_sub_by_participant_id(participant_id);
   condition = files[0].cond;
 }
@@ -348,3 +348,5 @@ function collect_data(data_type, target_id, content_target) {
 // TODO: in JS from R: all ids rep 3 times per condition and 5 statements per subj DONE
 
 // TODO: update IC after approval
+// TODO: improve loading of file in the background
+// TODO: more info for statements (context)
