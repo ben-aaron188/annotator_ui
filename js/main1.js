@@ -332,7 +332,7 @@ function collect_data(data_type, target_id, content_target) {
 // TODO: boundary allowance DONE
 // TODO: conditions: full range = max allowance, partial range DONE
 
-// TODO: selection of n statements from bank
+// TODO: selection of n statements from bank DONE
 // TODO: db integration: json with: id, algrat, condition, judgment DONE
 // TODO: control handles on conditionals DONE
 // TODO: add IC DONE
@@ -344,4 +344,7 @@ function collect_data(data_type, target_id, content_target) {
 // TODO: layout fix of slider in Chrome DONE
 // TODO: layout of slider if statement is html DONE
 
-// TODO: statements/server integration: set condition-id-subj pair in DB, all ids rep 3 times per condition and 5 statements per subj
+// TODO: statements/server integration: set subj in DB DONE
+// TODO: in JS from R: all ids rep 3 times per condition and 5 statements per subj DONE
+
+// TODO: update IC after approval
