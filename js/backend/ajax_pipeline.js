@@ -4,7 +4,7 @@ function get_condition_from_db(callback_func) {
     var retrieved_data_from_db = {};
     $.ajax({
         type: "GET",
-        url: "../php/get_conditions.php",
+        url: "./php/get_conditions.php",
         dataType: "json",
         success: function (response) {
             retrieved_data_from_db = response;
@@ -33,7 +33,7 @@ function get_condition_from_db(callback_func) {
 function set_condition_in_db(id, status_update) {
     $.ajax({
         type: "POST",
-        url: "../php/set_conditions.php",
+        url: "./php/set_conditions.php",
         data: {
             id: id,
             updatable_status: status_update
