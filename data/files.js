@@ -1,4 +1,17 @@
 files_pre = [{
+	"id": 00000,
+	"text": "Adjust the slider value within the allowed boundary towards a more deceptive judgment.",
+	"algrat": 55,
+	"cond": 999,
+	"participant_id": 999999
+},
+{
+	"id": 999999,
+	"text": "Adjust the slider value within the allowed boundary towards a more truthful judgment.",
+	"algrat": 70,
+	"cond": 999,
+	"participant_id": 999999
+},{
 	"id": 1101,
 	"text": "Me and a few friends will be going along to watch the hurling semi-finals. It's taking place this Sunday in Dublin, last years was a lot of fun so we're looking forward to it.",
 	"algrat": 74,

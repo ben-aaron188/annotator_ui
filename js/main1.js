@@ -11,13 +11,13 @@ var mancheck2_counter = 0;
 
 function set_statements_condition(ajax_retrieved_obj) {
   participant_id = parseInt(ajax_retrieved_obj.cond_cond);
-  // practice_statements = get_sub_by_participant_id(-1);
+  practice_files = get_sub_by_participant_id(999999);
   files = get_sub_by_participant_id(participant_id);
   condition = files[0].cond;
 }
 
 // get object based on participant_id identifier
-function get_sub_by_participant_id(participant_getter_id){
+function get_sub_by_participant_id(participant_getter_id) {
   var selection = [];
   $(files_pre).each(function(i, eli) {
     if (eli.participant_id == participant_getter_id) {
@@ -30,22 +30,10 @@ function get_sub_by_participant_id(participant_getter_id){
 // create textarea
 $(document).ready(function() {
   get_condition_from_db(display_condition_details);
-  // condition_meta = {cond_cond: 2};
+  condition_meta = {
+    cond_cond: 1
+  };
   // condition = condition_meta.cond_cond;
-  // set_statements_condition(condition_meta);
-  // init_data();
-  // if (condition == 0) {
-  //   instructions = instructions_normal;
-  //   constrained_meta = false;
-  // } else if (condition == 1) {
-  //   instructions = instructions_full;
-  //   constrained_meta = false;
-  //   boundary_allowance_interval = 100;
-  // } else if (condition == 2) {
-  //   instructions = instructions_partial;
-  //   constrained_meta = true;
-  //   boundary_allowance_interval = 20;
-  // }
   var div_screen_1 = "<div id='div_text_1'></div>";
   var slider_placeholder_div = "<div id='div_placeholder'></div>";
   var proceed_button = "<div id='proceed'>Next</div>";
@@ -94,12 +82,12 @@ $(document).ready(function() {
                       populate('div_text_1', instructions[9], true);
                       $("#proceed").on('click', function() {
                         populate('div_text_1', instructions[10], true);
-                        add_slider('div_text_1', 'practice_slider_1', constrained_meta, files[0]);
+                        add_slider('div_text_1', 'practice_slider_1', constrained_meta, practice_files[0]);
                         $("#proceed").on('click', function() {
                           if (($("#practice_slider_1").val() >= 80 && condition != 2) || $("#practice_slider_1").val() >= 60 && condition == 2) {
                             collect_data('slider', 'practice_slider_1', files[0]);
                             populate('div_text_1', instructions[11], true);
-                            add_slider('div_text_1', 'practice_slider_2', constrained_meta, files[1]);
+                            add_slider('div_text_1', 'practice_slider_2', constrained_meta, practice_files[1]);
                             $("#proceed").on('click', function() {
                               if (($("#practice_slider_2").val() <= 20 && condition != 2) || $("#practice_slider_2").val() <= 65 && condition == 2) {
                                 collect_data('slider', 'practice_slider_2', files[1]);
@@ -202,13 +190,20 @@ function add_slider(div_id, slider_id, constrained, content_target) {
   $(dyn_div_id).html(slider);
   if (constrained == true) {
     slider_val = content_target.algrat;
+    var slider_val_lower = slider_val-0.5;
+    var slider_val_upper = slider_val+0.5;
     var boundary_lower = (slider_val - boundary_allowance_interval / 2);
     var boundary_upper = (slider_val + boundary_allowance_interval / 2);
     $(input).css(
-      'background-image', 'linear-gradient( to right, #eb2e22, #eb2e22 ' + boundary_lower + '%, #10d55f ' + boundary_lower + '%, #10d55f ' + boundary_upper + '%, #eb2e22 ' + boundary_lower + '%)'
+      'background-image', 'linear-gradient( to right, #eb2e22, #eb2e22 ' + boundary_lower + '%, #10d55f ' + boundary_lower + '%, #10d55f ' + slider_val_lower + '%, #000 ' + slider_val_lower + '%, #000 ' + slider_val_upper + '%, #10d55f ' + slider_val_upper + '%, #10d55f ' + boundary_upper + '%, #eb2e22 ' + boundary_lower + '%)'
     );
   } else if (constrained == false) {
     slider_val = 50;
+    var slider_val_lower = slider_val-0.5;
+    var slider_val_upper = slider_val+0.5;
+    $(input).css(
+      'background-image', 'linear-gradient( to right, #ccc, #ccc ' + slider_val_lower + '%, #000 ' + slider_val_lower + '%, #000 ' + slider_val_upper + '%, #ccc ' + slider_val_upper + '%)'
+    );
   }
   $(input).val(slider_val);
   $(input).on('input', function() {
@@ -350,4 +345,5 @@ function collect_data(data_type, target_id, content_target) {
 // TODO: update IC after approval
 // TODO: improve loading of file in the background
 // TODO: more info for statements (context)
-// BUG: content target for practice statements does not work
+// BUG: content target for practice statements does not work DONE
+// TODO: set reminder on slider
