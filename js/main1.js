@@ -344,6 +344,6 @@ function collect_data(data_type, target_id, content_target) {
 
 // TODO: update IC after approval
 // TODO: improve loading of file in the background
-// TODO: more info for statements (context)
+// TODO: more info for statements (context) DONE
 // BUG: content target for practice statements does not work DONE
-// TODO: set reminder on slider
+// TODO: set reminder on slider DONE
