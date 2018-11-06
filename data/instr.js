@@ -92,6 +92,10 @@ var instructions_normal = [{
   id: 19,
   text: 'This is not quite correct. To indicate a highly truthful statement, move the slider to the left slide of the range.',
   html: '<p></p>'
+}, {
+  id: 20,
+  text: 'Thanks for participating. You can now close this tab and return to prolific via this link:  <a href="https://app.prolific.ac/submissions/complete?cc=993RBU25">https://app.prolific.ac/submissions/complete?cc=993RBU25</a>',
+  html: '<p>Thanks for participating. You can now close this tab and return to prolific via this link:  <a href="https://app.prolific.ac/submissions/complete?cc=993RBU25">https://app.prolific.ac/submissions/complete?cc=993RBU25</a></p>'
 }];
 
 var instructions_full = [{
@@ -170,6 +174,10 @@ var instructions_full = [{
   id: 19,
   text: 'This is not quite correct. To indicate a highly truthful statement, move the slider to the left slide of the range.',
   html: '<p></p>'
+}, {
+  id: 20,
+  text: 'Thanks for participating. You can now close this tab and return to prolific via this link:  <a href="https://app.prolific.ac/submissions/complete?cc=993RBU25">https://app.prolific.ac/submissions/complete?cc=993RBU25</a>',
+  html: '<p>Thanks for participating. You can now close this tab and return to prolific via this link:  <a href="https://app.prolific.ac/submissions/complete?cc=993RBU25">https://app.prolific.ac/submissions/complete?cc=993RBU25</a></p>'
 }];
 
 var instructions_partial = [{
@@ -248,4 +256,8 @@ var instructions_partial = [{
   id: 19,
   text: 'This is not quite correct. To indicate a more truthful statement, move the slider to the left slide of the allowed boundary range.',
   html: '<p></p>'
+}, {
+  id: 20,
+  text: 'Thanks for participating. You can now close this tab and return to prolific via this link:  <a href="https://app.prolific.ac/submissions/complete?cc=993RBU25">https://app.prolific.ac/submissions/complete?cc=993RBU25</a>',
+  html: '<p>Thanks for participating. You can now close this tab and return to prolific via this link:  <a href="https://app.prolific.ac/submissions/complete?cc=993RBU25">https://app.prolific.ac/submissions/complete?cc=993RBU25</a></p>'
 }];

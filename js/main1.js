@@ -129,7 +129,8 @@ $(document).ready(function() {
                                                 collected_data.push(p_id);
                                                 console.log('reached end of task');
                                                 collect_php(JSON.stringify(collected_data));
-                                                alert('You can now close this task');
+                                                populate('div_text_1', instructions[19], true);
+                                                $("#proceed").hide();
                                               });
                                             });
                                           });
