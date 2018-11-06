@@ -338,7 +338,7 @@ function collect_data(data_type, target_id, content_target) {
 // TODO: in JS from R: all ids rep 3 times per condition and 5 statements per subj DONE
 
 // TODO: update IC after approval
-// TODO: improve loading of file in the background
+// TODO: improve loading of file in the background (NOT NEEDED)
 // TODO: more info for statements (context) DONE
 // BUG: content target for practice statements does not work DONE
 // TODO: set reminder on slider DONE
