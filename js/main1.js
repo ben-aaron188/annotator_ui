@@ -30,10 +30,10 @@ function get_sub_by_participant_id(participant_getter_id) {
 // create textarea
 $(document).ready(function() {
   get_condition_from_db(display_condition_details);
-  condition_meta = {
-    cond_cond: 1
-  };
-  // condition = condition_meta.cond_cond;
+  // condition_meta = {
+  //   cond_cond: 1
+  // };
+  condition = condition_meta.cond_cond;
   var div_screen_1 = "<div id='div_text_1'></div>";
   var slider_placeholder_div = "<div id='div_placeholder'></div>";
   var proceed_button = "<div id='proceed'>Next</div>";
