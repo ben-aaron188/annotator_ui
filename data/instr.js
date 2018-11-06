@@ -39,7 +39,7 @@ var instructions_normal = [{
 }, {
   id: 6,
   text: 'instruction6',
-  html: '<p>Please indicate your judgment as follows:</p><ul><li>below each statement you will see a slider with values from 0 (= certainly truthful) to 100 (= certainly deceptive)</li><li>use the slider to indicate how truthful or deceptive you think the statement is</li><li>values on the left = you judge a statement to be more truthful</li><li>values on the right = you judge the statement to be more deceptive</li><li>the slider is set by default to a neutral point of 50 (i.e. indecisive between truthful and deceptive)</li><li>move the slider to the left if you think the statements is more likely to be truthful, move the slider to the right to indicate you think the statements is more likely to be deceptive</li><li>the more you move the slider to the extremes, the more certainty you indicate with your judgment (i.e. values closer to the middle suggest that you are less certain of your judgment)</li></ul>'
+  html: '<p>Please indicate your judgment as follows:</p><ul><li>below each statement you will see a slider with values from 0 (= certainly truthful) to 100 (= certainly deceptive)</li><li>use the slider to indicate how truthful or deceptive you think the statement is</li><li>values on the left = you judge a statement to be more truthful</li><li>values on the right = you judge the statement to be more deceptive</li><li>the slider is set by default to a neutral point of 50 (i.e. indecisive between truthful and deceptive)</li><li>the starting position of the slider is also indicated by a small black line on the slider</li><li>move the slider to the left if you think the statements is more likely to be truthful, move the slider to the right to indicate you think the statements is more likely to be deceptive</li><li>the more you move the slider to the extremes, the more certainty you indicate with your judgment (i.e. values closer to the middle suggest that you are less certain of your judgment)</li></ul>'
 }, {
   id: 7,
   text: 'instruction7',
@@ -67,7 +67,7 @@ var instructions_normal = [{
 }, {
   id: 13,
   text: 'start task',
-  html: '<p>You can now start rating the actual statements.</br></br>Remember: you can earn 25p per statement as a bonus if you make it more accurate. The bonus will be paid to your prolific account within 2 weeks.</p>'
+  html: '<p>You can now start rating the actual statements.</br></br>Above each statement, you can see the activity that participants wrote about.</br>This activity was either their genuine most important activity in the next seven days (= they told the truth), or a fake activity from someone else (= they lied).</br></br>Remember: you can earn 25p per statement as a bonus if you make it more accurate. The bonus will be paid to your prolific account within 2 weeks.</p>'
 }, {
   id: 14,
   text: 'strategy',
@@ -117,7 +117,7 @@ var instructions_full = [{
 }, {
   id: 6,
   text: 'instruction6',
-  html: '<p>Please indicate your judgment as follows:</p><ul><li>below each statement you will see a slider with values from 0 (= certainly truthful) to 100 (= certainly deceptive)</li><li>use the slider to indicate how truthful or deceptive you think the statement is</li><li>values on the left = you judge a statement to be more truthful</li><li>values on the right = you judge the statement to be more deceptive</li></ul>You will see that the slider is set by default at a specific judgment. This point reflects the judgment of an artificial intelligence (AI) programme that was trained on some statements and then judged the truthfulness of the statements you are about to read.<ul><li>adjust the AI judgment by moving the slider</li><li>you can make use of the full range of values</li><li>move the slider to the left if you think the statements is more likely to be truthful, move the slider to the right to indicate you think the statements is more likely to be deceptive</li><li>the more you move the slider to the extremes, the more certainty you indicate with your judgment (i.e. values closer to the middle suggest that you are less certain of your judgment)</li></ul>'
+  html: '<p>Please indicate your judgment as follows:</p><ul><li>below each statement you will see a slider with values from 0 (= certainly truthful) to 100 (= certainly deceptive)</li><li>use the slider to indicate how truthful or deceptive you think the statement is</li><li>values on the left = you judge a statement to be more truthful</li><li>values on the right = you judge the statement to be more deceptive</li></ul>You will see that the slider is set by default at a specific judgment. This point reflects the judgment of an artificial intelligence (AI) programme that was trained on some statements and then judged the truthfulness of the statements you are about to read<ul><li>adjust the AI judgment by moving the slider</li><li>the starting position of the slider is also indicated by a small black line on the slider</li><li>you can make use of the full range of values</li><li>move the slider to the left if you think the statements is more likely to be truthful, move the slider to the right to indicate you think the statements is more likely to be deceptive</li><li>the more you move the slider to the extremes, the more certainty you indicate with your judgment (i.e. values closer to the middle suggest that you are less certain of your judgment)</li></ul>'
 }, {
   id: 7,
   text: 'instruction7',
@@ -145,7 +145,7 @@ var instructions_full = [{
 }, {
   id: 13,
   text: 'start task',
-  html: '<p>You can now start rating the actual statements.</br></br>Remember: you can earn 25p per statement as a bonus if you make it more accurate. The bonus will be paid to your prolific account within 2 weeks.</p>'
+  html: '<p>You can now start rating the actual statements.</br></br>Above each statement, you can see the activity that participants wrote about.</br>This activity was either their genuine most important activity in the next seven days (= they told the truth), or a fake activity from someone else (= they lied).</br></br>Remember: you can earn 25p per statement as a bonus if you make it more accurate. The bonus will be paid to your prolific account within 2 weeks.</p>'
 }, {
   id: 14,
   text: 'strategy',
@@ -195,7 +195,7 @@ var instructions_partial = [{
 }, {
   id: 6,
   text: 'instruction6',
-  html: '<p>Please indicate your judgment as follows:</p><ul><li>below each statement you will see a slider with values from 0 (= certainly truthful) to 100 (= certainly deceptive)</li><li>use the slider to indicate how truthful or deceptive you think the statement is</li><li>values on the left = you judge a statement to be more truthful</li><li>values on the right = you judge the statement to be more deceptive</li></ul>You will see that the slider is set by default at a specific judgment. This point reflects the judgment of an artificial intelligence (AI) programme that was trained on some statements and then judged the truthfulness of the statements you are about to read.<ul><li>adjust the AI judgment by moving the slider</li><li>you are allowed to adjust the AI judgment up to 10 points to the left or right</li><li>the green area shows you the allowed region in which you make a valid judgment</li><li>move the slider to the left if you think the statements is more likely to be truthful, move the slider to the right to indicate you think the statements is more likely to be deceptive</li><li>the more you move the slider to the extremes, the more certainty you indicate with your judgment (i.e. values closer to the middle suggest that you are less certain of your judgment)</li></ul>'
+  html: '<p>Please indicate your judgment as follows:</p><ul><li>below each statement you will see a slider with values from 0 (= certainly truthful) to 100 (= certainly deceptive)</li><li>use the slider to indicate how truthful or deceptive you think the statement is</li><li>values on the left = you judge a statement to be more truthful</li><li>values on the right = you judge the statement to be more deceptive</li></ul>You will see that the slider is set by default at a specific judgment. This point reflects the judgment of an artificial intelligence (AI) programme that was trained on some statements and then judged the truthfulness of the statements you are about to read.<ul><li>adjust the AI judgment by moving the slider</li><li>the starting position of the slider is also indicated by a small black line on the slider</li><li>you are allowed to adjust the AI judgment up to 10 points to the left or right</li><li>the green area shows you the allowed region in which you make a valid judgment</li><li>move the slider to the left if you think the statements is more likely to be truthful, move the slider to the right to indicate you think the statements is more likely to be deceptive</li><li>the more you move the slider to the extremes, the more certainty you indicate with your judgment (i.e. values closer to the middle suggest that you are less certain of your judgment)</li></ul>'
 }, {
   id: 7,
   text: 'instruction7',
@@ -223,7 +223,7 @@ var instructions_partial = [{
 }, {
   id: 13,
   text: 'start task',
-  html: '<p>You can now start rating the actual statements.</br></br>Remember: you can earn 25p per statement as a bonus if you make it more accurate. The bonus will be paid to your prolific account within 2 weeks.</p>'
+  html: '<p>You can now start rating the actual statements.</br></br>Above each statement, you can see the activity that participants wrote about.</br>This activity was either their genuine most important activity in the next seven days (= they told the truth), or a fake activity from someone else (= they lied).</br></br>Remember: you can earn 25p per statement as a bonus if you make it more accurate. The bonus will be paid to your prolific account within 2 weeks.</p>'
 }, {
   id: 14,
   text: 'strategy',

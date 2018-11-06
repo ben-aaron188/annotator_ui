@@ -174,7 +174,7 @@ function populate(div_id, content_target, get_html) {
   } else if (get_html == false) {
     populate_text = content_target.text;
     dyn_div_id = '#' + div_id;
-    $(dyn_div_id).text(populate_text);
+    $(dyn_div_id).html(populate_text);
   }
   $("#div_placeholder").empty();
   $('#proceed').unbind();
@@ -347,3 +347,5 @@ function collect_data(data_type, target_id, content_target) {
 // TODO: more info for statements (context) DONE
 // BUG: content target for practice statements does not work DONE
 // TODO: set reminder on slider DONE
+
+// FIXME: load files as html to induce line breaks? DONE
