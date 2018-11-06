@@ -33,7 +33,7 @@ $(document).ready(function() {
   // condition_meta = {
   //   cond_cond: 1
   // };
-  condition = condition_meta.cond_cond;
+  // condition = condition_meta.cond_cond;
   var div_screen_1 = "<div id='div_text_1'></div>";
   var slider_placeholder_div = "<div id='div_placeholder'></div>";
   var proceed_button = "<div id='proceed'>Next</div>";
@@ -48,6 +48,7 @@ $(document).ready(function() {
     // populate('div_text_1', instructions[2], true);
     $("#proceed").on('click', function() {
 
+      condition = condition_meta.cond_cond;
       set_statements_condition(condition_meta);
       init_data();
       if (condition == 0) {
