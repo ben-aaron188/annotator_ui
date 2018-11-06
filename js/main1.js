@@ -30,10 +30,6 @@ function get_sub_by_participant_id(participant_getter_id) {
 // create textarea
 $(document).ready(function() {
   get_condition_from_db(display_condition_details);
-  // condition_meta = {
-  //   cond_cond: 1
-  // };
-  // condition = condition_meta.cond_cond;
   var div_screen_1 = "<div id='div_text_1'></div>";
   var slider_placeholder_div = "<div id='div_placeholder'></div>";
   var proceed_button = "<div id='proceed'>Next</div>";
@@ -44,8 +40,6 @@ $(document).ready(function() {
   populate('div_text_1', instructions_base[0], true);
   $("#proceed").on('click', function() {
     populate('div_text_1', instructions_base[1], true);
-    // $("#proceed").on('click', function() {
-    // populate('div_text_1', instructions[2], true);
     $("#proceed").on('click', function() {
 
       condition = condition_meta.cond_cond;
@@ -63,7 +57,6 @@ $(document).ready(function() {
         constrained_meta = true;
         boundary_allowance_interval = 20;
       }
-
       populate('div_text_1', instructions_base[3], true);
       $("#proceed").on('click', function() {
         populate('div_text_1', instructions[4], true);
@@ -163,7 +156,6 @@ $(document).ready(function() {
         });
       });
     });
-    // });
   });
 });
 
