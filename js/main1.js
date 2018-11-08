@@ -337,7 +337,7 @@ function collect_data(data_type, target_id, content_target) {
 // TODO: statements/server integration: set subj in DB DONE
 // TODO: in JS from R: all ids rep 3 times per condition and 5 statements per subj DONE
 
-// TODO: update IC after approval
+// TODO: update IC after approval DONE
 // TODO: improve loading of file in the background (NOT NEEDED)
 // TODO: more info for statements (context) DONE
 // BUG: content target for practice statements does not work DONE
