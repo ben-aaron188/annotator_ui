@@ -45,18 +45,18 @@ function init_conditions_in_db(condition, status_update) {
 
 
 // last batch
-var participant_ids = [];
-
-for (var i = 1; i < 800; i++) {
-  participant_ids[i] = i;
-}
-
-var final_participant_ids = shuffle(participant_ids);
+// var participant_ids = [];
 //
-$.ajaxSetup({
-  async: false
-});
-bunch_set_conditions(final_participant_ids);
-$.ajaxSetup({
-  async: true
-});
+// for (var i = 1; i < 780; i++) {
+//   participant_ids[i] = i;
+// }
+//
+// var final_participant_ids = shuffle(participant_ids);
+// //
+// $.ajaxSetup({
+//   async: false
+// });
+// bunch_set_conditions(final_participant_ids);
+// $.ajaxSetup({
+//   async: true
+// });
