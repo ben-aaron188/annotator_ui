@@ -63,7 +63,7 @@ var instructions_normal = [{
 }, {
   id: 12,
   text: 'Practice 2',
-  html: '<p>Practice 2: Adjust the slider value to indicate a highly truthful judgment.</p>'
+  html: '<p>Practice 2:</br></br>Adjust the slider value to indicate a highly truthful judgment.</p>'
 }, {
   id: 13,
   text: 'start task',
@@ -145,7 +145,7 @@ var instructions_full = [{
 }, {
   id: 12,
   text: 'Practice 2',
-  html: '<p>Practice 2:</br></brAdjust the slider value to indicate a highly truthful judgment.</p>'
+  html: '<p>Practice 2:</br></br>Adjust the slider value to indicate a highly truthful judgment.</p>'
 }, {
   id: 13,
   text: 'start task',
